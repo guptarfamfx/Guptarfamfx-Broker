@@ -2,256 +2,366 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Guptar Fam FX - The Fast Lane to Profits</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <title>Guptar Fam FX - Demo Platform</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
       background-color: #0a0f2c;
       color: white;
-    }
-
-    nav {
+      min-height: 100vh;
       display: flex;
       justify-content: center;
-      background-color: #111;
-      padding: 10px 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      color: #00c18c;
-    }
-
-    #hero {
-      text-align: center;
-      padding: 100px 20px;
-    }
-
-    #hero h1 {
-      font-size: 40px;
-      margin-bottom: 10px;
-    }
-
-    #hero p {
-      font-size: 18px;
-      margin-bottom: 30px;
-    }
-
-    .btn-primary {
-      background-color: #00c18c;
-      color: white;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      font-size: 16px;
-      display: inline-block;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      margin: 5px;
-    }
-
-    .btn-primary:hover {
-      background-color: #00a673;
-    }
-
-    section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: auto;
-      scroll-margin-top: 80px;
-    }
-
-    h2 {
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
-
-    #tradingview-widget-container {
-      margin-bottom: 20px;
-    }
-
-    #balance {
-      font-size: 18px;
-      text-align: center;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-
-    #tradeResult, #history {
-      font-size: 16px;
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    #history ul {
-      list-style-type: none;
+      align-items: center;
+      font-family: 'Poppins', sans-serif, sans-serif;
+      margin: 0;
       padding: 0;
     }
+    .card {
+      background-color: #11152f;
+      border-radius: 12px;
+      padding: 2rem;
+      width: 100%;
+      max-width: 400px;
+      box-sizing: border-box;
+      box-shadow: 0 0 15px rgba(0,193,140,0.6);
+    }
+    .form-control, .btn {
+      border-radius: 8px;
+    }
+    a {
+      color: #00c18c;
+      cursor: pointer;
+    }
+    a:hover {
+      color: #00a673;
+      text-decoration: none;
+    }
+    nav {
+      background-color: #11152f;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      border-radius: 12px;
+      max-width: 1000px;
+      width: 100%;
+      box-sizing: border-box;
+      color: #00c18c;
+    }
+    nav .brand {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+    nav button {
+      border: none;
+      background-color: #00c18c;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    nav button:hover {
+      background-color: #009e70;
+    }
+    .container {
+      max-width: 1000px;
+      width: 100%;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+    .balance-card {
+      background-color: #11152f;
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .balance-card h3 {
+      color: #00c18c;
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .balance-card p {
+      font-size: 2rem;
+      margin: 0;
+    }
+    .trade-section {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .trade-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 250px;
+      width: 100%;
+    }
+    .trade-buttons button {
+      background-color: #00c18c;
+      border: none;
+      padding: 1rem;
+      border-radius: 8px;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 1.1rem;
+      width: 100%;
+    }
+    .trade-buttons button:hover {
+      background-color: #009e70;
+    }
+    .chart-container {
+      flex-grow: 1;
+      min-width: 300px;
+      height: 400px;
+      background-color: #11152f;
+      border-radius: 12px;
+      overflow: hidden;
+      width: 100%;
+      max-width: 650px;
+    }
+    table {
+      width: 100%;
+      background-color: #11152f;
+      border-collapse: collapse;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 1rem;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #22284d;
+    }
+    th {
+      background-color: #0e163c;
+      color: #00c18c;
+    }
+    tbody tr:hover {
+      background-color: #22284d;
+    }
+    .empty-history {
+      text-align: center;
+      color: #555;
+      padding: 2rem 0;
+    }
 
-    #history li {
-      background-color: #111;
-      margin: 5px 0;
-      padding: 10px;
-      border-radius: 5px;
+    /* Hide all views initially */
+    .view {
+      display: none;
+    }
+    /* Show active view */
+    .active {
+      display: block;
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="#hero">Home</a>
-    <a href="#demo">Demo</a>
-    <a href="#market">Market</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <div class="container">
 
-  <!-- Hero Section -->
-  <section id="hero">
-    <h1>GUPTAR FAM FX</h1>
-    <p>THE FAST LANE TO PROFITS</p>
-    <a href="#about" class="btn-primary">Get Started</a>
-  </section>
-
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Guptar Fam FX</h2>
-    <p>Welcome to Guptar Fam FX — your gateway to fast profits through smart forex trading. We offer education, tools, and a supportive community to help you succeed.</p>
-  </section>
-
-  <!-- Demo Section -->
-  <section id="demo">
-    <h2>Demo Trading</h2>
-    <p>Experience live trading simulation with virtual balance and trading history.</p>
-
-    <!-- TradingView Widget -->
-    <div id="tradingview-widget-container">
-      <div class="tradingview-widget-container__widget"></div>
+    <!-- Signup View -->
+    <div id="signupView" class="card view active">
+      <h2 class="text-center mb-4">Create Account</h2>
+      <form id="signupForm">
+        <div class="mb-3">
+          <label for="signupName" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="signupName" required />
+        </div>
+        <div class="mb-3">
+          <label for="signupEmail" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="signupEmail" required />
+        </div>
+        <div class="mb-3">
+          <label for="signupPassword" class="form-label">Password</label>
+          <input type="password" class="form-control" id="signupPassword" required />
+        </div>
+        <div class="mb-3">
+          <label for="signupConfirm" class="form-label">Confirm Password</label>
+          <input type="password" class="form-control" id="signupConfirm" required />
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+        <div class="text-center mt-3">
+          Already have an account? <a id="toLogin" href="#">Log In</a>
+        </div>
+      </form>
     </div>
 
-    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-    <script type="text/javascript">
-      new TradingView.widget({
-        "width": "100%",
-        "height": 500,
-        "symbol": "FX:EURUSD",
-        "interval": "30",
-        "timezone": "Etc/UTC",
-        "theme": "dark",
-        "style": "1",
-        "locale": "en",
-        "toolbar_bg": "#f1f3f6",
-        "enable_publishing": false,
-        "hide_legend": false,
-        "save_image": false,
-        "container_id": "tradingview-widget-container"
-      });
-    </script>
-
-    <!-- Balance and Trade Controls -->
-    <div id="balance">Balance: $10,000.00</div>
-    <div style="text-align: center;">
-      <button onclick="placeDemoTrade('buy')" class="btn-primary">Buy</button>
-      <button onclick="placeDemoTrade('sell')" class="btn-primary">Sell</button>
-      <button onclick="resetDemo()" class="btn-primary">Reset</button>
-    </div>
-    <p id="tradeResult"></p>
-
-    <!-- Trade History -->
-    <div id="history">
-      <h3>Trade History</h3>
-      <ul id="tradeHistoryList"></ul>
+    <!-- Login View -->
+    <div id="loginView" class="card view">
+      <h2 class="text-center mb-4">Log In</h2>
+      <form id="loginForm">
+        <div class="mb-3">
+          <label for="loginEmail" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="loginEmail" required />
+        </div>
+        <div class="mb-3">
+          <label for="loginPassword" class="form-label">Password</label>
+          <input type="password" class="form-control" id="loginPassword" required />
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Log In</button>
+        <div class="text-center mt-3">
+          Don't have an account? <a id="toSignup" href="#">Sign Up</a>
+        </div>
+      </form>
     </div>
 
-    <!-- Demo Trading Logic -->
-    <script>
-      let balance = 10000;
-      let tradeCount = 0;
-      const tradeHistory = [];
+    <!-- Dashboard View -->
+    <div id="dashboardView" class="view" style="max-width: 1000px;">
+      <nav>
+        <div class="brand">Guptar Fam FX</div>
+        <button id="logoutBtn">Logout</button>
+      </nav>
 
-      function formatMoney(num) {
-        return '$' + num.toFixed(2);
-      }
+      <div class="balance-card">
+        <h3>Virtual Balance</h3>
+        <p id="balance">$10,000.00</p>
+      </div>
 
-      function placeDemoTrade(type) {
-        const fakePrice = (Math.random() * (1.2000 - 1.1800) + 1.1800).toFixed(4);
-        const profit = (Math.random() * 200 - 100).toFixed(2); // Random P/L between -100 and +100
-        balance += parseFloat(profit);
-        tradeCount++;
+      <div class="trade-section">
+        <div class="trade-buttons">
+          <button id="buyBtn">Buy EUR/USD</button>
+          <button id="sellBtn">Sell EUR/USD</button>
+        </div>
+        <div class="chart-container" id="chartContainer">
+          <!-- TradingView Widget Embed -->
+          <iframe
+            src="https://s.tradingview.com/widgetembed/?symbol=FX:EURUSD&interval=60&hidesidetoolbar=1&symboledit=1&saveimage=1&toolbar=0"
+            width="100%"
+            height="400"
+            frameborder="0"
+            allowtransparency="true"
+            scrolling="no"
+          ></iframe>
+        </div>
+      </div>
 
-        const trade = {
-          number: tradeCount,
-          type: type.toUpperCase(),
-          price: fakePrice,
-          profit: parseFloat(profit)
-        };
+      <h4>Trade History</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Pair</th>
+            <th>Price</th>
+            <th>Time</th>
+            <th>Profit/Loss</th>
+          </tr>
+        </thead>
+        <tbody id="tradeHistoryBody">
+          <tr class="empty-history">
+            <td colspan="5">No trades yet</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-        tradeHistory.unshift(trade);
-        updateUI(trade);
-      }
+  </div>
 
-      function updateUI(trade) {
-        // Update balance
-        document.getElementById("balance").innerText = `Balance: ${formatMoney(balance)}`;
+<script>
+  // Elements
+  const signupView = document.getElementById('signupView');
+  const loginView = document.getElementById('loginView');
+  const dashboardView = document.getElementById('dashboardView');
 
-        // Show last trade result
-        document.getElementById("tradeResult").innerText =
-          `Trade #${trade.number}: ${trade.type} at $${trade.price} | P/L: ${formatMoney(trade.profit)}`;
+  const toLoginLink = document.getElementById('toLogin');
+  const toSignupLink = document.getElementById('toSignup');
+  const logoutBtn = document.getElementById('logoutBtn');
 
-        // Update trade history list
-        const historyList = document.getElementById("tradeHistoryList");
-        const listItem = document.createElement("li");
-        listItem.innerText =
-          `#${trade.number} - ${trade.type} at $${trade.price} | P/L: ${formatMoney(trade.profit)}`;
-        historyList.prepend(listItem);
-      }
+  // Simple in-memory "database"
+  let users = [];
+  let currentUser = null;
+  let virtualBalance = 10000;
+  let tradeHistory = [];
 
-      function resetDemo() {
-        balance = 10000;
-        tradeCount = 0;
-        tradeHistory.length = 0;
-        document.getElementById("balance").innerText = "Balance: $10,000.00";
-        document.getElementById("tradeResult").innerText = "";
-        document.getElementById("tradeHistoryList").innerHTML = "";
-      }
-    </script>
-  </section>
+  // Show a given view and hide others
+  function showView(view) {
+    signupView.classList.remove('active');
+    loginView.classList.remove('active');
+    dashboardView.classList.remove('active');
+    view.classList.add('active');
+  }
 
-  <!-- Market Section -->
-  <section id="market">
-    <h2>Market</h2>
-    <p>Stay updated with market news, analysis, and trading signals.</p>
-  </section>
+  // Navigation links
+  toLoginLink.addEventListener('click', e => {
+    e.preventDefault();
+    showView(loginView);
+  });
 
-  <!-- Education Section -->
-  <section id="education">
-    <h2>Education</h2>
-    <p>Learn forex trading through our guides, videos, and webinars for all skill levels.</p>
-  </section>
+  toSignupLink.addEventListener('click', e => {
+    e.preventDefault();
+    showView(signupView);
+  });
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Get in touch with our support team or follow us on social media.</p>
-  </section>
+  logoutBtn.addEventListener('click', () => {
+    currentUser = null;
+    virtualBalance = 10000;
+    tradeHistory = [];
+    updateBalanceDisplay();
+    clearTradeHistory();
+    showView(loginView);
+  });
 
-</body>
-</html>
+  // Signup form
+  const signupForm = document.getElementById('signupForm');
+  signupForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const name = document.getElementById('signupName').value.trim();
+    const email = document.getElementById('signupEmail').value.trim().toLowerCase();
+    const password = document.getElementById('signupPassword').value;
+    const confirm = document.getElementById('signupConfirm').value;
+
+    if (password !== confirm) {
+      alert("Passwords don't match");
+      return;
+    }
+    if(users.find(u => u.email === email)) {
+      alert("Email already registered");
+      return;
+    }
+
+    users.push({name, email, password});
+    alert(`Account created for ${name}! Please log in.`);
+    signupForm.reset();
+    showView(loginView);
+  });
+
+  // Login form
+  const loginForm = document.getElementById('loginForm');
+  loginForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const email = document.getElementById('loginEmail').value.trim().toLowerCase();
+    const password = document.getElementById('loginPassword').value;
+
+    const user = users.find(u => u.email === email && u.password === password);
+    if(!user) {
+      alert('Invalid email or password');
+      return;
+    }
+    currentUser = user;
+    alert(`Welcome back, ${currentUser.name}!`);
+    loginForm.reset();
+    showView(dashboardView);
+    updateBalanceDisplay();
+    clearTradeHistory();
+    renderTradeHistory();
+  });
+
+  // Update balance display
+  function updateBalanceDisplay() {
+    document.getElementById('balance').textContent = `$${virtualBalance.toFixed(2)}`;
+  }
+
+  // Clear trade history table
+  function clearTradeHistory() {
+    const tbody = document.getElementById('tradeHistoryBody');
+    tbody.innerHTML = '';
+  }
+
+  // Render trade history
+  function renderTradeHistory() {
+    const tbody = document.getElementById('trade
