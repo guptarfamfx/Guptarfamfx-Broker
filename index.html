@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Guptar Fam FX - The Fast Lane to Profits</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -23,113 +22,100 @@
 
     nav a {
       color: white;
-      margin: 0 15px;
       text-decoration: none;
-      font-weight: 600;
+      margin: 0 15px;
+      font-weight: bold;
     }
 
-    header {
-      background: url('images/background.jpg') center/cover no-repeat;
+    nav a:hover {
+      color: #00c18c;
+    }
+
+    #hero {
       text-align: center;
-      padding: 120px 20px;
+      padding: 100px 20px;
     }
 
-    header h1 {
-      font-size: 48px;
-      margin: 0;
-      font-weight: 700;
+    #hero h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
     }
 
-    header p {
+    #hero p {
       font-size: 18px;
-      margin-top: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+      margin-bottom: 30px;
     }
 
-    .cta-button {
-      background: #00d084;
+    .btn-primary {
+      background-color: #00c18c;
       color: white;
       padding: 12px 24px;
       border: none;
-      font-weight: bold;
-      font-size: 16px;
-      margin-top: 30px;
       border-radius: 5px;
-      cursor: pointer;
+      text-decoration: none;
+      font-size: 16px;
     }
 
-    .cta-button:hover {
-      background: #00b574;
+    .btn-primary:hover {
+      background-color: #00a673;
     }
 
     section {
       padding: 60px 20px;
-      max-width: 1000px;
+      max-width: 800px;
       margin: auto;
     }
 
-    footer {
-      background-color: #111;
-      padding: 20px;
-      text-align: center;
-      color: #aaa;
+    h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
     }
   </style>
 </head>
 <body>
 
+  <!-- Navigation -->
   <nav>
-    <a href="#about">About</a>
+    <a href="#hero">Home</a>
     <a href="#demo">Demo</a>
     <a href="#market">Market</a>
-    <a href="#learn">Education</a>
+    <a href="#education">Education</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <header>
+  <!-- Hero Section -->
+  <section id="hero">
     <h1>GUPTAR FAM FX</h1>
-    <p>The Fast Lane to Profits</p>
-    <button class="cta-button">Get Started</button>
-  </header>
-
-  <section id="about">
-    <h2>About Guptar Fam FX</h2>
-    <p>We are a next-gen forex trading platform offering educational tools and real market access for aspiring traders. Learn, trade, and grow with the Guptar Fam!</p>
+    <p>THE FAST LANE TO PROFITS</p>
+    <a href="#about" class="btn-primary">Get Started</a>
   </section>
 
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Guptar Fam FX</h2>
+    <p>Welcome to Guptar Fam FX — your gateway to fast profits through smart forex trading. We offer education, tools, and a supportive community to help you succeed.</p>
+  </section>
+
+  <!-- Other Sections (Optional) -->
   <section id="demo">
-    <h2>Open a Free Demo Account</h2>
-    <form>
-      <input type="text" placeholder="Full Name" required><br><br>
-      <input type="email" placeholder="Email Address" required><br><br>
-      <button class="cta-button" type="submit">Register</button>
-    </form>
+    <h2>Demo</h2>
+    <p>Experience our trading platform and tools in real-time with a free demo account.</p>
   </section>
 
   <section id="market">
-    <h2>Live Market Prices</h2>
-    <p>Embed or integrate your market widget here (like TradingView or similar).</p>
+    <h2>Market</h2>
+    <p>Stay updated with market news, analysis, and trading signals.</p>
   </section>
 
-  <section id="learn">
-    <h2>Forex Education</h2>
-    <ul>
-      <li>What is Forex?</li>
-      <li>Basic Chart Patterns</li>
-      <li>Risk Management Tips</li>
-    </ul>
+  <section id="education">
+    <h2>Education</h2>
+    <p>Learn forex trading through our guides, videos, and webinars for all skill levels.</p>
   </section>
 
   <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: support@guptarfamfx.com</p>
-    <p>Instagram | Telegram | WhatsApp</p>
+    <h2>Contact</h2>
+    <p>Get in touch with our support team or follow us on social media.</p>
   </section>
-
-  <footer>
-    <p>&copy; 2025 Guptar Fam FX. All rights reserved.</p>
-  </footer>
 
 </body>
 </html>
